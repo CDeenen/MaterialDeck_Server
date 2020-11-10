@@ -1,0 +1,10 @@
+{
+  "name": "mdServer",
+  "version": "0.2.4",
+  "description": "Websocket server to allow communication between Foundry VTT and Elgato Stream Decks",
+  "bin": "mdServer.js",
+  "author": "Cris",
+  "dependencies": {
+    "ws": "^7.4.0"
+  }
+}
