@@ -1,2 +1,2 @@
-Get the latest release <a href="https://github.com/CDeenen/MaterialDeck_Server/releases">here</a>.<br>
+<b>This repository is depricated in favor of <a href="https://github.com/CDeenen/MaterialServer/releases">Material Server</a><br>
 Please go to the main <a href="https://github.com/CDeenen/MaterialDeck">Material Deck</a> github page for more information on the module.

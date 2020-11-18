@@ -2,6 +2,8 @@ const WebSocket = require('ws');
  
 const wss = new WebSocket.Server({ port: 3003 });
 
+const DEBUG = 1;
+
 webSockets = {} // userID: webSocket
 let foundryConnected = false;
 let streamDeckConnected = false;
@@ -21,7 +23,7 @@ wss.on('connection', function connection(ws,req) {
   
   ws.on('message', function incoming(msg) {
     msgJSON = JSON.parse(msg);
-    //console.log(msgJSON);
+    if (DEBUG == 2) console.log(msgJSON);
     if (msgJSON.type == "init"){
       if (msgJSON.source == "SD"){
         source = 'SD';
@@ -44,11 +46,11 @@ wss.on('connection', function connection(ws,req) {
     }
     //else {
       if (userID == 0 && foundryConnected) {
-        //console.log('sent to ' + 1 + ': ' + msg);
+        if (DEBUG) console.log('sent to ' + 1 + ': ' + msg);
         webSockets[1].send(msg);
       }
       else if (userID == 1 && streamDeckConnected) {
-        //console.log('sent to ' + 0 + ': ' + msg);
+        if (DEBUG)  console.log('sent to ' + 0 + ': ' + msg);
         webSockets[0].send(msg);
       }
     //}
